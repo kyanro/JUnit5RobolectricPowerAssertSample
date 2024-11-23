@@ -1,5 +1,6 @@
 package com.example.junit5robolectricpowerassertsample
 
+import org.junit.jupiter.api.DisplayName
 import kotlin.test.Test
 
 
@@ -10,6 +11,7 @@ import kotlin.test.Test
  */
 class ExampleUnitTest {
     @Test
+    @DisplayName("デフォルトで用意されてるexampleテスト")
     fun addition_isCorrect() {
         assert(4 == 2 + 2)
     }
