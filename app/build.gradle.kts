@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.android.junit5)
+    alias(libs.plugins.junit5.robolectric.extension)
 }
 
 android {
@@ -38,6 +39,13 @@ android {
     buildFeatures {
         compose = true
     }
+
+    @Suppress("UnstableApiUsage")
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
@@ -58,4 +66,6 @@ dependencies {
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.jupiter.engine)
     testImplementation(libs.junit.jupiter.params)
+
+    testImplementation(libs.robolectric)
 }
