@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.android.junit5)
 }
 
 android {
@@ -53,4 +54,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     testImplementation(libs.kotlin.test)
+
+    testImplementation(libs.junit.jupiter.api)
+    testRuntimeOnly(libs.junit.jupiter.engine)
+    testImplementation(libs.junit.jupiter.params)
 }
