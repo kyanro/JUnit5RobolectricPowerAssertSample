@@ -42,3 +42,4 @@ android-junit5 = { id = "de.mannodermaus.android-junit5", version.ref = "android
 
 junit5-robolectric-extension = { id = "tech.apter.junit5.jupiter.robolectric-extension-gradle-plugin", version.ref = "junit5-robolectric-extension" }
 
+kotlin-power-assert = { id = "org.jetbrains.kotlin.plugin.power-assert", version.ref = "kotlin" }

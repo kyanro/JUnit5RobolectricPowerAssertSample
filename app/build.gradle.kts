@@ -1,9 +1,26 @@
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.android.junit5)
     alias(libs.plugins.junit5.robolectric.extension)
+    alias(libs.plugins.kotlin.power.assert)
+}
+
+@OptIn(ExperimentalKotlinGradlePluginApi::class)
+powerAssert {
+    functions = listOf(
+        "kotlin.assert",
+        "kotlin.test.assertTrue",
+        "kotlin.test.assertEquals",
+        "kotlin.test.assertNull",
+    )
+    includedSourceSets = listOf(
+        "releaseUnitTest",
+        "debugUnitTest",
+    )
 }
 
 android {
